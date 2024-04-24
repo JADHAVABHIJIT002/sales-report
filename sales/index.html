@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Analysis Tool</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Data Analysis Tool</h1>
+    
+    <div class="upload-buttons">
+        <button onclick="uploadFile('callDataInput')" class="upload-button call-data">Upload Call Data</button>
+        <button onclick="uploadFile('salesDataInput')" class="upload-button sales-data">Upload Sales Data</button>
+    </div>
+    
+    <div class="file-inputs">
+        <div class="file-input">
+            <input type="file" id="callDataInput" accept=".xlsx">
+            <span id="callDataFileLabel"></span>
+            <button onclick="removeCallData()" class="remove-button">Remove</button>
+        </div>
+        <div class="file-input">
+            <input type="file" id="salesDataInput" accept=".xlsx">
+            <span id="salesDataFileLabel"></span>
+            <button onclick="removeSalesData()" class="remove-button">Remove</button>
+        </div>
+    </div>
+
+    <div class="buttons-container">
+        <button onclick="displaySampleData()" class="action-button sample-data">Sample Data</button>
+        <button onclick="displayUploadedData()" class="action-button display-data">Display Uploaded Data</button>
+        <button onclick="processData()" class="action-button process-data">Process Data</button>
+    </div>
+    
+    <div id="output" class="output"></div>
+
+    <div id="notification" class="notification"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
